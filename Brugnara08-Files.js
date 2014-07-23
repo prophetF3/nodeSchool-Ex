@@ -26,7 +26,7 @@ async.each(arr, function(arr_item, cbIterator){
   setTimeout(fs.appendFile(fileName, arr_item + '\n', function(err){
     cbIterator(err);
     console.log('ho scritto correttamente!');
-  }), arr_item);
+  }), parseInt(arr_item,10));
 }, function(err){
   if (err) throw err;
     else console.log('finito!'); 

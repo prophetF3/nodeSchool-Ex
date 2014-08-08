@@ -26,12 +26,16 @@ var device_password = 'LunaP!c0';
 fs.readFile(path,'utf8' ,function (err, file) {
     if (err) throw err;
     var lines = file.split('\n');
-    lines.forEach(function(line){
+    iterOfInformationLimit.eachLimit(lines, 10, function(line, cbIterator){
         var match = line.match(pattern);
         if(match)
             process_info(match[1], match[2]);
         else
             console.log('non matcha');
+        cbIterator(err);
+    }, function(err){
+        if(err)
+        throw err;
     });
 });
 

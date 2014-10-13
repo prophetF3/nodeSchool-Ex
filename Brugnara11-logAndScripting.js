@@ -17,7 +17,7 @@ var bash_script = require('child_process').spawn;
 var iterOfInformationLimit = require('async');
 var path = process.argv[2];
 var pattern = /([A-Z]+):.*\b([\d]+\.[\d]+\.[\d]+\.[\d]+)/;
-var device_password = 'LunaP!c0';
+var device_password = '<insert password>';
 
 
 //leggo il file riga per riga ed eseguo un match sulla stringa usando un pattern definito con una regex.
